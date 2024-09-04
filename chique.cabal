@@ -1,0 +1,33 @@
+cabal-version:   3.0
+name:            Chique
+version:         0.1.0.0
+license:         AGPL-3.0-or-later
+license-file:    LICENSE
+author:          Eduardo Correia
+maintainer:      educorreia932@gmail.com
+category:        Language
+build-type:      Simple
+extra-doc-files: CHANGELOG.md
+
+source-repository head
+  type:     git
+  location: https://github.com/Educorreia932/Chique
+
+common depends
+  build-depends:
+    , Agda
+    , base  ^>=4.18.2.0
+    , mtl   ^>=2.3.1
+
+  ghc-options:   -Wall
+
+library chique-lib
+  import:          depends
+  hs-source-dirs:  src
+
+executable chique
+  import:           depends
+  main-is:          Main.hs
+  build-depends:    chique-lib
+  hs-source-dirs:   app
+  default-language: GHC2021
