@@ -1,0 +1,3 @@
+[submodule "agda"]
+	path = agda
+	url = git@github.com:Educorreia932/agda.git

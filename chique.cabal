@@ -1,5 +1,5 @@
 cabal-version:   3.0
-name:            Chique
+name:            chique
 version:         0.1.0.0
 license:         AGPL-3.0-or-later
 license-file:    LICENSE
@@ -15,15 +15,19 @@ source-repository head
 
 common depends
   build-depends:
-    , Agda
-    , base  ^>=4.18.2.0
-    , mtl   ^>=2.3.1
+    , Agda                  ^>=2.8.0
+    , base                  ^>=4.18.2.0
+    , mtl                   ^>=2.3.1
+    , optparse-applicative  ^>=0.18.1.0
 
   ghc-options:   -Wall
 
 library chique-lib
   import:          depends
   hs-source-dirs:  src
+  exposed-modules:
+    Node
+    Printer
 
 executable chique
   import:           depends
